@@ -1,0 +1,14 @@
+name: transplant_benefit_2
+title: transplant_benefit_2
+username:
+account: 9nvpmp-ben-stutchfield
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 7610277
+bundleId: 6512082
+url: https://9nvpmp-ben-stutchfield.shinyapps.io/transplant_benefit_2/
+when: 1668434324.48075
+lastSyncTime: 1668434324.48076
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: app_v2.R|app_v2b_base.R|app_v2b.R|app_v2c/app.R|app_v2c.R|app.R|drafts.R|extract survival curves.R
