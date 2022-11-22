@@ -156,7 +156,7 @@ ui <- dashboardPage(
                        source(file.path("ui", "ui_input1_3_v2.R"))$value,
                        source(file.path("ui", "ui_input1_4_v2.R"))$value,
                        
-                ),
+                ), 
                 column(3,
                       fluidRow(
 
