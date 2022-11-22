@@ -160,7 +160,7 @@ ui <- dashboardPage(
                 column(3,
                       fluidRow(
 
-###                        
+                     
                       box( title = "TBS version 1 (discontinued Oct 2022)", status = "warning", solidHeader = TRUE,  addSpinner( plotOutput("tbs_v1_base", height = 100), color = "#FF911C"), width = 12 ), 
 
                        
@@ -172,65 +172,75 @@ ui <- dashboardPage(
                
                     box(title = "TBS is based on area under predicted survival curves without transplant and after transplant",  height = 60, width=12),
                     
-                  tabBox( title = "Examples", 
-                            width = 12, height = "250px", side = "right",
-                            id = "tabset1", 
-                          
-                          
-                          
-                             tabPanel("Additions",  actionButton("inpatient", "Admit to hospital"),
-                                      
-                                      actionButton("outpatient", "Outpatient"),
-
-                                      actionButton("yrs3_wait", "+ 3 years"),
-                                      
-                                      actionButton("small_cancer", "+ 2cm cancer"),
-                                      
-                                      actionButton("large_cancer", "+ 5cm cancer"),
-                                      
-                                      actionButton("max_cancer", "+ 5cm cancer AFP 1000"),
-                                      
-                                      actionButton("remove_cancer", "Remove cancer"),
-                                      
-                                      actionButton("ascites_enceph", "+ ascites & encephalopathy"),
-                                      
-                                      actionButton("renal_replace", "+ renal replacement therapy"),
-        
-                             ),
-
-                          tabPanel("Young patient", 	actionButton("NAFLD_60_45", "NAFLD age 45 UKELD 60"), 
-                                   
-                                   actionButton("NAFLD_49_45", "NAFLD age 45 UKELD 49"),
-                                   
-                                   actionButton("ALD_60_45", "ALD age 45 UKELD 60"),
-                                   
-                                   actionButton("ALD_49_45", "ALD age 45 UKELD 49"),	
-                                   
-                                   actionButton("PSC_60_45", "PSC age 45 UKELD 60"),
-                                   
-                                   actionButton("retx_60_45", "Retransplant age 45 UKELD 60"),
-                                   
-                                   actionButton("ca_size5_afp1000_45", "Max cancer age 45"),
-                                   
-                                   ),
-                          
-                          tabPanel("Older patient",  actionButton("NAFLD_60_65", "NAFLD age 65 UKELD 60"),
-                                   
-                                   actionButton("NAFLD_49_65", "NAFLD age 65 UKELD 49"),
-                                   
-                                   actionButton("ALD_60_65", "ALD age 65 UKELD 60"),
-                                   
-                                   actionButton("ALD_49_65", "ALD age 65 UKELD 49"),
-                                   
-                                   actionButton("PSC_60_65", "PSC age 65 UKELD 60"),
-                                   
-                                   actionButton("retx_60_65", "Retransplant age 65 UKELD 60"),
-                                   
-                                   actionButton("ca_size5_afp1000_65", "Max cancer age 65"),
-                                   
-                                   ), ),),
+                    
+                  # tabBox( title = "Examples", 
+                  #           width = 12, height = "250px", side = "right",
+                  #           id = "tabset1", 
+                  #         
+                  #         
+                  #         
+                  #            tabPanel("Additions", 
+                  #                     
+                  # 
+                  #                     actionButton("yrs3_wait", "+ 3 years"),
+                  #                     
+                  #                     actionButton("small_cancer", "+ 2cm cancer"),
+                  #                     
+                  #                     actionButton("large_cancer", "+ 5cm cancer"),
+                  #                     
+                  #                     actionButton("max_cancer", "+ 5cm cancer AFP 1000"),
+                  #                     
+                  #                     actionButton("remove_cancer", "Remove cancer"),
+                  #                     
+                  #                     actionButton("inpatient", "Admit to hospital"),
+                  #                     
+                  #                     actionButton("outpatient", "Outpatient"),
+                  # 
+                  #                     actionButton("ascites_enceph", "+ ascites & encephalopathy"),
+                  #                     
+                  #                     actionButton("renal_replace", "+ renal replacement therapy"),
+                  # 
+                  #            ),
+                  # 
+                  #         # tabPanel("Young patient", 	actionButton("NAFLD_60_45", "NAFLD age 45 UKELD 60"), 
+                  #         #          
+                  #         #          actionButton("NAFLD_49_45", "NAFLD age 45 UKELD 49"),
+                  #         #          
+                  #         #          actionButton("ALD_60_45", "ALD age 45 UKELD 60"),
+                  #         #          
+                  #         #          actionButton("ALD_49_45", "ALD age 45 UKELD 49"),	
+                  #         #          
+                  #         #          actionButton("PSC_60_45", "PSC age 45 UKELD 60"),
+                  #         #          
+                  #         #          actionButton("retx_60_45", "Retransplant age 45 UKELD 60"),
+                  #         #          
+                  #         #          actionButton("ca_size5_afp1000_45", "Max cancer age 45"),
+                  #         #          
+                  #         #          ),
+                  #         
+                  #         # tabPanel("Older patient",  actionButton("NAFLD_60_65", "NAFLD age 65 UKELD 60"),
+                  #         #          
+                  #         #          actionButton("NAFLD_49_65", "NAFLD age 65 UKELD 49"),
+                  #         #          
+                  #         #          actionButton("ALD_60_65", "ALD age 65 UKELD 60"),
+                  #         #          
+                  #         #          actionButton("ALD_49_65", "ALD age 65 UKELD 49"),
+                  #         #          
+                  #         #          actionButton("PSC_60_65", "PSC age 65 UKELD 60"),
+                  #         #          
+                  #         #          actionButton("retx_60_65", "Retransplant age 65 UKELD 60"),
+                  #         #          
+                  #         #          actionButton("ca_size5_afp1000_65", "Max cancer age 65"),
+                  #         #          
+                  #         #          ), 
+                  #         
+                  #         ),
+                  
+                  ),
 
                 ),
+
+
                 column(3,
                    fluidRow(
  
@@ -337,7 +347,7 @@ ui <- dashboardPage(
               #  titlePanel("TransplantBenefit.org"), 
                 mainPanel(
                   
-                  p("Some background to app"),
+                  p("TBC"),
 
                 )) ))  ) )
 
