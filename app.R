@@ -11,12 +11,14 @@ library(shinydashboard)
 library(dplyr)
 library(tidyr)
 library(shinyWidgets)
+library(DT)
+
 #library(readr)
 #library(ggplot2)
 #library(ggridges)
 #library(viridis)
 #library(finalfit)
-#library(DT)
+
 #library(patchwork)
 
 
@@ -27,7 +29,7 @@ library(shinyWidgets)
 # Define UI
 ui <- dashboardPage(
   
-  title = "Liver score app",
+  title = "The Liver Score app",
   skin="black",
   
   dashboardHeader(
@@ -141,7 +143,14 @@ ui <- dashboardPage(
               
                         #  source(file.path("ui", "ui_input1_5_v2.R"))$value,
 
+            fluidRow(
               
+              align = "center", style="color:red",
+              
+              "This app is provided as an information resource for clinicians and patients. It is not to be used for any diagnostic or treatment purposes.",
+            ),
+            
+            fluidRow( "." ),
               fluidRow(
                 # Input
                 
@@ -173,69 +182,75 @@ ui <- dashboardPage(
                     box(title = "TBS is based on area under predicted survival curves without transplant and after transplant",  height = 60, width=12),
                     
                     
-                  # tabBox( title = "Examples", 
-                  #           width = 12, height = "250px", side = "right",
-                  #           id = "tabset1", 
-                  #         
-                  #         
-                  #         
-                  #            tabPanel("Additions", 
-                  #                     
-                  # 
-                  #                     actionButton("yrs3_wait", "+ 3 years"),
-                  #                     
-                  #                     actionButton("small_cancer", "+ 2cm cancer"),
-                  #                     
-                  #                     actionButton("large_cancer", "+ 5cm cancer"),
-                  #                     
-                  #                     actionButton("max_cancer", "+ 5cm cancer AFP 1000"),
-                  #                     
-                  #                     actionButton("remove_cancer", "Remove cancer"),
-                  #                     
-                  #                     actionButton("inpatient", "Admit to hospital"),
-                  #                     
-                  #                     actionButton("outpatient", "Outpatient"),
-                  # 
-                  #                     actionButton("ascites_enceph", "+ ascites & encephalopathy"),
-                  #                     
-                  #                     actionButton("renal_replace", "+ renal replacement therapy"),
-                  # 
-                  #            ),
-                  # 
-                  #         # tabPanel("Young patient", 	actionButton("NAFLD_60_45", "NAFLD age 45 UKELD 60"), 
-                  #         #          
-                  #         #          actionButton("NAFLD_49_45", "NAFLD age 45 UKELD 49"),
-                  #         #          
-                  #         #          actionButton("ALD_60_45", "ALD age 45 UKELD 60"),
-                  #         #          
-                  #         #          actionButton("ALD_49_45", "ALD age 45 UKELD 49"),	
-                  #         #          
-                  #         #          actionButton("PSC_60_45", "PSC age 45 UKELD 60"),
-                  #         #          
-                  #         #          actionButton("retx_60_45", "Retransplant age 45 UKELD 60"),
-                  #         #          
-                  #         #          actionButton("ca_size5_afp1000_45", "Max cancer age 45"),
-                  #         #          
-                  #         #          ),
-                  #         
-                  #         # tabPanel("Older patient",  actionButton("NAFLD_60_65", "NAFLD age 65 UKELD 60"),
-                  #         #          
-                  #         #          actionButton("NAFLD_49_65", "NAFLD age 65 UKELD 49"),
-                  #         #          
-                  #         #          actionButton("ALD_60_65", "ALD age 65 UKELD 60"),
-                  #         #          
-                  #         #          actionButton("ALD_49_65", "ALD age 65 UKELD 49"),
-                  #         #          
-                  #         #          actionButton("PSC_60_65", "PSC age 65 UKELD 60"),
-                  #         #          
-                  #         #          actionButton("retx_60_65", "Retransplant age 65 UKELD 60"),
-                  #         #          
-                  #         #          actionButton("ca_size5_afp1000_65", "Max cancer age 65"),
-                  #         #          
-                  #         #          ), 
-                  #         
-                  #         ),
+                  tabBox( title = "Examples",
+                            width = 12, height = "250px", side = "right",
+                            id = "tabset1",
+
+
+
+                             tabPanel("Additions",
+
+
+                                      actionButton("yrs3_wait", "+ 3 years"),
+
+                                      actionButton("small_cancer", "+ 2cm cancer"),
+
+                                      actionButton("large_cancer", "+ 5cm cancer"),
+
+                                      actionButton("max_cancer", "+ 5cm cancer AFP 1000"),
+
+                                      actionButton("remove_cancer", "Remove cancer"),
+
+                                      actionButton("inpatient", "Admit to hospital"),
+
+                                      actionButton("outpatient", "Outpatient"),
+
+                                      actionButton("ascites_enceph", "+ ascites & encephalopathy"),
+
+                                      actionButton("renal_replace", "+ renal replacement therapy"),
+
+                             ),
+
+                           tabPanel("Young patient", 	actionButton("NAFLD_60_45", "NAFLD age 45 UKELD 60"),
+                          
+                                    actionButton("NAFLD_49_45", "NAFLD age 45 UKELD 49"),
+                          
+                                    actionButton("ALD_60_45", "ALD age 45 UKELD 60"),
+                          
+                                    actionButton("ALD_49_45", "ALD age 45 UKELD 49"),
+                          
+                                    actionButton("PSC_60_45", "PSC age 45 UKELD 60"),
+                          
+                                   actionButton("retx_60_45", "Retransplant age 45 UKELD 60"),
+                          
+                                    actionButton("ca_size5_afp1000_45", "Max cancer age 45"),
+                          
+                                    ),
+
+                           tabPanel("Older patient",  actionButton("NAFLD_60_65", "NAFLD age 65 UKELD 60"),
+                          
+                                    actionButton("NAFLD_49_65", "NAFLD age 65 UKELD 49"),
+                          
+                                  actionButton("ALD_60_65", "ALD age 65 UKELD 60"),
+                          
+                                    actionButton("ALD_49_65", "ALD age 65 UKELD 49"),
+                          
+                                    actionButton("PSC_60_65", "PSC age 65 UKELD 60"),
+                          
+                                    actionButton("retx_60_65", "Retransplant age 65 UKELD 60"),
+                          
+                                    actionButton("ca_size5_afp1000_65", "Max cancer age 65"),
+                          
+                                    ),
+
+                          ),
                   
+                  
+                  
+                  
+                  
+                  
+
                   ),
 
                 ),
@@ -265,7 +280,28 @@ ui <- dashboardPage(
                    
                     tabPanel("MELD",  infoBoxOutput("meldBox", width=12)),
 
-                 ),),),),
+                 ),),
+                 
+                 source(file.path("ui", "ui_footnote_v2.R"))$value,
+                 
+                 fluidRow(
+                   column(12,
+                          checkboxInput("data_table", label = "Show data table", FALSE),
+                          conditionalPanel(
+                            condition = 'input.data_table == true',
+                            DT::dataTableOutput("x1"))
+                   ),
+                 ),
+                 
+                 
+                 
+                 ),
+                
+                
+                
+                
+                
+                ),
 
               # Retina images
               tags$script(type="text/javascript", src="retina.min.js")
@@ -362,7 +398,7 @@ server <- function(input, output, session) {
   source(file.path("server", "server1_1_v3b.R"),  local = TRUE)$value
   source(file.path("server", "server1_2_v2.R"),  local = TRUE)$value
   source(file.path("server", "server1_3_v2.R"),  local = TRUE)$value
-  # source(file.path("server", "server1_4_v2.R"),  local = TRUE)$value
+  source(file.path("server", "server1_4_v2.R"),  local = TRUE)$value
   source(file.path("server", "server1_5_download_v2.R"),  local = TRUE)$value
   
   

@@ -1,11 +1,11 @@
-footer_txt = "Original version © Surgical Informatics, University of Edinburgh | Scottish Liver Transplant Unit 2019.  Update to facilitate comparisons by Ian Rowe (University of Leeds), Ben Stutchfield (University of Edinburgh) and Ewen Harrison (University of Edinburgh)."
+footer_txt = "Original version © Surgical Informatics, University of Edinburgh | Scottish Liver Transplant Unit 2022  Update to facilitate comparisons by Ben Stutchfield (University of Edinburgh), Ian Rowe (University of Leeds) and Ewen Harrison (University of Edinburgh)."
 
 box(title = "References", status = "info", width=12,
-		"Version 0.11",br(),
+		"Version 2.0",br(),
 		a(href="https://github.com/SurgicalInformatics/transplantbenefit",
 			"Original code on Github", target="_blank"),br(),
-		a(href="https://github.com/iacrowe/transplantbenefit",
-			"Updated code on Github", target="_blank"),br(),
+	#	a(href="https://github.com/iacrowe/transplantbenefit",
+	#		"Updated code on Github", target="_blank"),br(),
 		a(href="https://github.com/SurgicalInformatics/transplantbenefit/issues",
 			"Bugs / feature requests", target="_blank", style="color:red"),br(),
 		a(href="https://www.odt.nhs.uk/transplantation/tools-policies-and-guidance/policies-and-guidance/",
