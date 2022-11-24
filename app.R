@@ -72,13 +72,13 @@ ui <- dashboardPage(
                      
                      menuItem("Acute liver failure", tabName = "acute_liver"),
                      
-                      menuItem("Acute on Chronic listing criteria", tabName = "acute_on_chronic"), 
+                   #   menuItem("Acute on Chronic listing criteria", tabName = "acute_on_chronic"), 
                      
-                     menuItem("Variant syndromes", tabName = "variants"),
+                     menuItem("Variant syndromes", tabName = "variants") #,
                      
-                     menuItem("UK PSC risk score", tabName = "uk_psc"),
+                   #  menuItem("UK PSC risk score", tabName = "uk_psc"),
                      
-                     menuItem("About", tabName = "about")
+                  #   menuItem("About", tabName = "about")
       
                      )
   ),
